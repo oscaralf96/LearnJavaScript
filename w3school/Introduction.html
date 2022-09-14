@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Introduction</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <button id="demo-button" onclick="change_square();">Show square</button>
+    <div class="demo-square"></div>
+    <h1>JavaScript outputs</h1>
+    <h3 style="color:rgb(206, 121, 121)"><script>document.write("Using document.write() after an HTML document is loaded, sill delete all existing HTML.");</script></h3>
+    
+    <h2>The window.print() Method</h2>
+    <p>Click the button to print the current page.</p>
+    <button onclick="window.print()">Print this page</button>
+    
+<script>
+    document.getElementById("demo").innerHTML = "hello JavaScript";
+    show = false;
+    function change_square() {
+        show = !show;
+        for (var square of document.getElementsByClassName("demo-square")) {
+            if (show){
+                square.style.width = "50px";
+                square.style.height = "50px";
+                square.style.background = "blue";
+                document.getElementById("demo-button").innerText = "Hide square";
+            } else {
+                square.style.width = "0";
+                square.style.height = "0";
+                square.style.background = "white";
+                document.getElementById("demo-button").innerText = "Show square";
+
+            }
+        }
+    }
+</script>
+<style>
+    .demo-style {
+
+    }
+</style>
+</body>
+</html>
